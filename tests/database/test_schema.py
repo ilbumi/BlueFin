@@ -1,5 +1,6 @@
 from tests.utils import open_mock_json
 from domains.transactions.dao import TransactionDAO
+from domains.operations.dao import OperationDAO
 
 
 async def test_dao_find_all():
@@ -8,3 +9,11 @@ async def test_dao_find_all():
     stored_transactions_data = await TransactionDAO.find_all()
 
     assert len(transactions_data) == len(stored_transactions_data)
+
+
+async def test_dao_filters():
+    operations_data = [
+        op for op in open_mock_json("operations") if op["account_id"] == 0
+    ]
+    stored_operations_data = await OperationDAO.find_all(account_id=0)
+    assert len(operations_data) == len(stored_operations_data)
