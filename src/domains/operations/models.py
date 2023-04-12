@@ -1,5 +1,5 @@
 from sqlalchemy import Column, ForeignKey, Integer, Double
-from ..database.db import Base
+from database import Base
 
 
 class Operation(Base):

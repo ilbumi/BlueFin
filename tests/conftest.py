@@ -2,12 +2,12 @@ import asyncio
 import json
 import pytest
 from sqlalchemy import insert
-from src.database.db import Base, engine, async_session_maker
+from database import Base, engine, async_session_maker
 
-from src.accounts.models import Account
-from src.instruments.models import Instrument
-from src.operations.models import Operation
-from src.transactions.models import Transaction
+from domains.accounts.models import Account
+from domains.instruments.models import Instrument
+from domains.operations.models import Operation
+from domains.transactions.models import Transaction
 
 
 @pytest.fixture(scope="session", autouse=True)
