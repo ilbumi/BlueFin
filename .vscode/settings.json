@@ -3,7 +3,8 @@
         "deployment",
         "development",
         "database",
-        "security"
+        "security",
+        "documentation"
     ],
     "editor.formatOnSave": true,
     "editor.formatOnPaste": false,
