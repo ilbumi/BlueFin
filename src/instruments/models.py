@@ -1,9 +1,9 @@
 from sqlalchemy import Column, Integer, String
-from ..db import Base
+from ..database.db import Base
 
 
-class Account(Base):
-    __tablename__ = "accounts"
+class Instrument(Base):
+    __tablename__ = "instruments"
 
     id = Column(Integer, primary_key=True)
     name = Column(String, nullable=False)

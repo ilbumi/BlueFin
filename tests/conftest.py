@@ -3,7 +3,11 @@ import json
 import pytest
 from sqlalchemy import insert
 from src.database.db import Base, engine, async_session_maker
-from src.database.models import Account, Instrument, Operation, Transaction
+
+from src.accounts.models import Account
+from src.instruments.models import Instrument
+from src.operations.models import Operation
+from src.transactions.models import Transaction
 
 
 @pytest.fixture(scope="session", autouse=True)
