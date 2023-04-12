@@ -2,7 +2,8 @@
     "conventionalCommits.scopes": [
         "deployment",
         "development",
-        "database"
+        "database",
+        "security"
     ],
     "editor.formatOnSave": true,
     "editor.formatOnPaste": false,
