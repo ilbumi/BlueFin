@@ -16,7 +16,8 @@
 				"ionutvmi.path-autocomplete",
 				"ms-python.vscode-pylance",
 				"ms-python.python",
-				"rangav.vscode-thunder-client"
+				"rangav.vscode-thunder-client",
+				"ms-python.black-formatter"
 			]
 		}
 	}
