@@ -1,0 +1,14 @@
+[
+    {
+        "id": 0,
+        "source_operation_id": 0,
+        "target_operation_id": 1,
+        "fee_operation_id": 2
+    },
+    {
+        "id": 1,
+        "source_operation_id": 3,
+        "target_operation_id": 4,
+        "fee_operation_id": 5
+    }
+]

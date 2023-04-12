@@ -1,0 +1,38 @@
+[
+    {
+        "id": 0,
+        "account_id": 0,
+        "instrument_id": 0,
+        "amount": 1.0
+    },
+    {
+        "id": 1,
+        "account_id": 1,
+        "instrument_id": 1,
+        "amount": -1.1
+    },
+    {
+        "id": 2,
+        "account_id": 0,
+        "instrument_id": 0,
+        "amount": -0.03
+    },
+    {
+        "id": 3,
+        "account_id": 1,
+        "instrument_id": 0,
+        "amount": 1.0
+    },
+    {
+        "id": 4,
+        "account_id": 0,
+        "instrument_id": 1,
+        "amount": -1.1
+    },
+    {
+        "id": 5,
+        "account_id": 1,
+        "instrument_id": 0,
+        "amount": -0.03
+    }
+]
