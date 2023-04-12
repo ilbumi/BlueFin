@@ -5,11 +5,13 @@ RUN apt-get update \
 	&& apt-get clean
 
 RUN mkdir /data
-RUN mkdir /data/src
-COPY ./ /data
-WORKDIR /data/src
+COPY ../ /data
 
 RUN pip3 install -r /data/requirements.txt
 RUN pip3 install -r /data/requirements.dev.txt
 
+WORKDIR /data/src
+
 EXPOSE 8000
+
+CMD ""
