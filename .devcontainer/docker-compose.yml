@@ -21,7 +21,7 @@ services:
       - .env
     command: "/bin/sh -c \"while sleep 1000; do :; done\""
     depends_on:
-      - db_graphql
+      - postgres
 
 volumes:
     postgres_test_data:
