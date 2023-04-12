@@ -1,13 +1,13 @@
 import asyncio
-import json
 import pytest
 from sqlalchemy import insert
-from database import Base, engine, async_session_maker
+from database.database import Base, engine, async_session_maker
 
 from domains.accounts.models import Account
 from domains.instruments.models import Instrument
 from domains.operations.models import Operation
 from domains.transactions.models import Transaction
+from tests.utils import open_mock_json
 
 
 @pytest.fixture(scope="session", autouse=True)
@@ -16,10 +16,6 @@ async def prepare_database():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.drop_all)
         await conn.run_sync(Base.metadata.create_all)
-
-    def open_mock_json(model: str):
-        with open(f"tests/mock_{model}.json") as file:
-            return json.load(file)
 
     async with async_session_maker() as session:
         insert_accounts = insert(Account).values(open_mock_json("accounts"))
@@ -31,6 +27,7 @@ async def prepare_database():
         await session.execute(insert_instruments)
         await session.execute(insert_operations)
         await session.execute(insert_transactions)
+        await session.commit()
 
 
 @pytest.fixture(scope="session")
