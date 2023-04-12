@@ -2,11 +2,11 @@ from pydantic import BaseSettings, Field, root_validator
 
 
 class Settings(BaseSettings):
-    db_user: str = Field(..., env="DB_USER")
-    db_password: str = Field(..., env="DB_PASSWORD")
-    db_name: str = Field(..., env="DB_NAME")
-    db_server: str = Field(..., env="DB_SERVER")
-    db_port: int = Field(..., env="DB_PORT")
+    db_user: str = Field(..., env="POSTGRES_USER")
+    db_password: str = Field(..., env="POSTGRES_PASSWORD")
+    db_name: str = Field(..., env="POSTGRES_DB")
+    db_server: str = Field(..., env="POSTGRES_SERVER")
+    db_port: int = Field(..., env="POSTGRES_PORT")
     db_url: str
 
     @root_validator(pre=True)

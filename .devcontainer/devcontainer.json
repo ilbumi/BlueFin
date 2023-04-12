@@ -4,6 +4,7 @@
 	"name": "Development docker containers",
     "dockerComposeFile": "docker-compose.yml",
 	"service": "app",
+	"mounts": ["source=${localWorkspaceFolder}/,target=/data,type=bind,consistency=delegated"],
     "workspaceFolder": "/data",
     "shutdownAction": "stopCompose",
 	"overrideCommand": true,
