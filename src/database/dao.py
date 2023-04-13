@@ -11,3 +11,10 @@ class BaseDAO:
             query = select(cls.model).filter_by(**filter_by)
             result = await session.execute(query)
             return result.scalars().all()
+
+    @classmethod
+    async def create(cls, **values):
+        async with async_session_maker() as session:
+            obj = cls.model(**values)
+            session.add(obj)
+            await session.commit()
